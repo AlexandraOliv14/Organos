@@ -1,0 +1,22 @@
+<escena>
+	<element>
+		<english>select</english>
+		<spanish>seleccionar</spanish>
+		<catalan>seleccionar</catalan>
+	</element>
+	<element>
+		<english>menu</english>
+		<spanish>menú</spanish>
+		<catalan>menú</catalan>
+	</element>
+	<element>
+		<english>passthrough</english>
+		<spanish>passthrough</spanish>
+		<catalan>passthrough</catalan>
+	</element>
+	<element>
+		<english>press</english>
+		<spanish>pulsar</spanish>
+		<catalan>prémer</catalan>
+	</element>
+</escena>
