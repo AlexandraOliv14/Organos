@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 21193008}
   - component: {fileID: 21193007}
   - component: {fileID: 21193010}
+  - component: {fileID: 21193011}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -288,6 +289,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &21193011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21193005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8da1279d4b0d246a84d156a36fb4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openMenuAction: {fileID: -1925992156735813021, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  ItemSistems:
+  - {fileID: 1693616521}
+  - {fileID: 298159836}
+  - {fileID: 511541613}
+  reyCastrigth: {fileID: 1999669394}
+  reyCastleft: {fileID: 2118572084}
 --- !u!1 &62941706
 GameObject:
   m_ObjectHideFlags: 0
@@ -4278,7 +4298,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 1132521393}
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_Handedness: 2
+  m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -4319,7 +4339,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_InputActionReferencePerformed: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    m_InputActionReferenceValue: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_InputActionReferenceValue: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualPerformed: 0
     m_ManualValue: 0
@@ -4462,8 +4482,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_InputActionReferencePerformed: {fileID: -6395602842196007441, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    m_InputActionReferenceValue: {fileID: 71106601250685021, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_InputActionReferencePerformed: {fileID: 3279264004350380116, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_InputActionReferenceValue: {fileID: -5908353012961274365, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualPerformed: 0
     m_ManualValue: 0
@@ -5077,7 +5097,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 1132521393}
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_Handedness: 1
+  m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
