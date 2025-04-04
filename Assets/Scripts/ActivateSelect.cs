@@ -4,27 +4,25 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class ActivateSelect : XRBaseInteractable
+public class ActivateSelect : MonoBehaviour
 {
     [Header("Change Color")]
-    [SerializeField] private GameObject sistema;  //Sistema que lo envuelve
+    [SerializeField] public GameObject sistema;  //Sistema que lo envuelve
 
     [SerializeField]
-    private GameObject nombre;
-    private TMP_Text _title;
+    public GameObject nombre;
+    public TMP_Text _title;
 
-    [SerializeField] private Material newColor;
-    [SerializeField] private Material oldColor1, oldColor2;
+    [SerializeField] public Material newColor;
+    [SerializeField] public Material oldColor1, oldColor2;
 
     public void Start()
     {
         _title = nombre.GetComponentInChildren<TMP_Text>();
     }
 
-    override protected void OnHoverEntered(HoverEnterEventArgs args)  ///To Hover --> Elemento
+    public void select()
     {
-        base.OnHoverEntered(args);//para no perder lo anterior
-
         Renderer render = GetComponent<Renderer>();
         if (render != null)
         {
@@ -40,16 +38,13 @@ public class ActivateSelect : XRBaseInteractable
 
                 render.materials = materials;  //Color de seleccion
             }
-
-            nombre.SetActive(true);
-
-            _title.text = ManagerIdioma.instance.traduccion(gameObject.name, sistema.name); //Inserta el nombre del sistema con su traduccion correspondiente
         }
-    }
+        nombre.SetActive(true);
 
-    protected override void OnHoverExited(HoverExitEventArgs args)
+        _title.text = ManagerIdioma.instance.traduccion(gameObject.name, sistema.name);
+    }
+    public void desSelect()
     {
-        base.OnHoverExited(args);
         Renderer render = GetComponent<Renderer>();
         if (render != null)
         {
@@ -67,6 +62,5 @@ public class ActivateSelect : XRBaseInteractable
             }
         }
     }
-
 
 }
