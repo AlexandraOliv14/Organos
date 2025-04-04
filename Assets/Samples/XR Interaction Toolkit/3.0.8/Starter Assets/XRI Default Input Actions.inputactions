@@ -2368,7 +2368,7 @@
                     "name": "",
                     "id": "4ae3f77a-6d7a-4ccf-85bc-7d127d5d806f",
                     "path": "<XRController>{RightHand}/{TriggerButton}",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "RayCast",
