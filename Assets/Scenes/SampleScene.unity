@@ -7981,8 +7981,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.008
-  m_fontSizeBase: 0.008
+  m_fontSize: 0.007
+  m_fontSizeBase: 0.007
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0.01
@@ -8499,7 +8499,7 @@ GameObject:
   - component: {fileID: 1068776323}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8785,6 +8785,7 @@ GameObject:
   - component: {fileID: 1084727819}
   - component: {fileID: 1084727818}
   - component: {fileID: 1084727817}
+  - component: {fileID: 1084727820}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8883,6 +8884,31 @@ MonoBehaviour:
   m_BodyPositionEvaluatorObject: {fileID: 0}
   m_ConstrainedBodyManipulatorObject: {fileID: 0}
   m_UseCharacterControllerIfExists: 1
+--- !u!114 &1084727820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084727813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bec90afa9e94324d8c94d0785fb6a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Toggle
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a6692dc7-b578-400b-836b-d9502da529ed
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -4371056886082514577, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  button: {fileID: 989280660}
 --- !u!1 &1109822003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1057930654295786, guid: 5fca90aa9a6cee84a8e8defebdf1319f, type: 3}

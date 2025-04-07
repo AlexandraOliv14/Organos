@@ -2084,6 +2084,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "VR",
+                    "type": "Button",
+                    "id": "c7fbdea9-d8d2-471a-a5c1-be3deb8a223a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -2392,6 +2401,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d85647af-78db-4eca-8763-7b1d3af29c76",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VR",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
