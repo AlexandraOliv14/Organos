@@ -1,27 +1,16 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ActivateSelect : MonoBehaviour
 {
+    [SerializeField] private GameObject sistema;  //Sistema que lo envuelve
+
     [Header("Change Color")]
-    [SerializeField] public GameObject sistema;  //Sistema que lo envuelve
+    [SerializeField] private Material newColor;
+    [SerializeField] private Material oldColor1, oldColor2;
 
-    [SerializeField]
-    public GameObject nombre;
-    public TMP_Text _title;
-
-    [SerializeField] public Material newColor;
-    [SerializeField] public Material oldColor1, oldColor2;
-
-    public void Start()
-    {
-        _title = nombre.GetComponentInChildren<TMP_Text>();
-    }
-
-    public void select()
+    public void Select(TMP_Text _title)
     {
         Renderer render = GetComponent<Renderer>();
         if (render != null)
@@ -39,11 +28,10 @@ public class ActivateSelect : MonoBehaviour
                 render.materials = materials;  //Color de seleccion
             }
         }
-        nombre.SetActive(true);
 
-        _title.text = ManagerIdioma.instance.traduccion(gameObject.name, sistema.name);
+       _title.text = ManagerIdioma.instance.traduccion(gameObject.name, sistema.name);
     }
-    public void desSelect()
+    public void DesSelect()
     {
         Renderer render = GetComponent<Renderer>();
         if (render != null)

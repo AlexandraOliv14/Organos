@@ -2,31 +2,27 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using TMPro;
-using UnityEngine.XR.Interaction.Toolkit;
 using Unity.VisualScripting;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using System;
-using NUnit.Framework.Internal;
 
 public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
 {
-    [SerializeField]
-    private InputActionProperty toggleAction;                   //Boton o obotones asignados
+    [SerializeField] private InputActionProperty toggleAction;                   //Boton o obotones asignados
 
     private XRRayInteractor rayInteractor;
 
-    [SerializeField]
-    private GameObject menu;
+    [SerializeField] private GameObject menu;
 
-    [SerializeField]
-    private GameObject nombreSistems;
+    [SerializeField] private GameObject nombreSistems;
 
     private GameObject objCurrent;
+
+    private TMP_Text _title;
 
     private void Awake()
     {
         toggleAction.action.Enable();
-        rayInteractor = GetComponent<XRRayInteractor>(); 
+        rayInteractor = GetComponent<XRRayInteractor>();
+        _title = nombreSistems.GetComponentInChildren<TMP_Text>();
     }
 
     void Update()
@@ -45,11 +41,11 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
                 if(objCurrent != null)
                 {
                     ActivateSelect actSelCurrent = objCurrent.GetComponent<ActivateSelect>();
-                    if (!actSelCurrent.IsUnityNull()) actSelCurrent.desSelect();
+                    if (!actSelCurrent.IsUnityNull()) actSelCurrent.DesSelect();
                 }
 
                 ActivateSelect actSel = hoveredObject.GetComponent<ActivateSelect>();
-                if (!actSel.IsUnityNull()) actSel.select();
+                if (!actSel.IsUnityNull()) actSel.Select(_title) ;
 
                 objCurrent = hoveredObject;
             }
@@ -70,15 +66,6 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
             else                                                //Si el boton de suelta, se desactiva el rayo, el nombre del sistema y se borra el
             {                                                   //contenido del nombre 
                 rayInteractor.enabled = false;
-
-                //nombreSistems.SetActive(false);
-
-                //TMP_Text sistemText =  nombreSistems.GetComponentInChildren<TMP_Text>();
-
-                /*if (sistemText!=null)
-                {
-                    sistemText.text = "";
-                }*/
             }
         }
     }

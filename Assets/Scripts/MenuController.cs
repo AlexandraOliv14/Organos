@@ -6,18 +6,14 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class MenuController : MonoBehaviour //MENUS
 {
     
-    [SerializeField]
-    private InputActionReference openMenuAction;
-
-    [SerializeField]
-    private List<GameObject> ItemSistems;
+    [SerializeField] private InputActionReference openMenuAction;
+    [SerializeField] private List<GameObject> ItemSistems;
+    [SerializeField] private GameObject nombreSistems;
 
     [Header ("RayCast")]
-    [SerializeField]
-    private XRRayInteractor reyCastrigth;
+    [SerializeField] private XRRayInteractor reyCastrigth;
 
-    [SerializeField]
-    private XRRayInteractor reyCastleft;
+    [SerializeField] private XRRayInteractor reyCastleft;
 
     private void Awake()
     {
@@ -33,6 +29,8 @@ public class MenuController : MonoBehaviour //MENUS
 
         reyCastrigth.enabled = gameObject.activeSelf;                         //El reyCast se activa o desactiva segun corresponda
         reyCastleft.enabled = gameObject.activeSelf;
+
+        nombreSistems.SetActive(!gameObject.activeSelf);
 
         if (gameObject.activeSelf)                                       //Cierra los sistemas si el menu esta activo
         {
