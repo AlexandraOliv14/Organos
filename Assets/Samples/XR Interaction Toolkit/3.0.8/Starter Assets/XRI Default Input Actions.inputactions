@@ -2077,7 +2077,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Press",
+                    "name": "VR",
                     "type": "Button",
                     "id": "daf299bc-1efe-4ec0-86ed-fc57bca07195",
                     "expectedControlType": "",
@@ -2086,7 +2086,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "VR",
+                    "name": "Press",
                     "type": "Button",
                     "id": "c7fbdea9-d8d2-471a-a5c1-be3deb8a223a",
                     "expectedControlType": "",
@@ -2400,7 +2400,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Press",
+                    "action": "VR",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -2411,7 +2411,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "VR",
+                    "action": "Press",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

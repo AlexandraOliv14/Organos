@@ -18,6 +18,8 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
 
     private TMP_Text _title;
 
+    [SerializeField] private AudioClip soundSelect;
+
     private void Awake()
     {
         toggleAction.action.Enable();
@@ -34,6 +36,8 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             GameObject hoveredObject = hit.collider.gameObject;
+            Debug.Log(hoveredObject);
+
             if (objCurrent == hoveredObject) return;
 
             if(objCurrent != hoveredObject)
@@ -45,7 +49,7 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
                 }
 
                 ActivateSelect actSel = hoveredObject.GetComponent<ActivateSelect>();
-                if (!actSel.IsUnityNull()) actSel.Select(_title) ;
+                if (!actSel.IsUnityNull()) actSel.Select(_title); SoundManager.instance.PlaySound(soundSelect) ;
 
                 objCurrent = hoveredObject;
             }
