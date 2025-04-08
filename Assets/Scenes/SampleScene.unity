@@ -394,6 +394,8 @@ MonoBehaviour:
   - {fileID: 2075144890}
   - {fileID: 226196800}
   nombreSistems: {fileID: 396133192}
+  cartelMenu: {fileID: 907354942}
+  cartelPress: {fileID: 2045810399}
   reyCastrigth: {fileID: 1999669394}
   reyCastleft: {fileID: 2118572084}
 --- !u!1 &27686792 stripped
@@ -2246,12 +2248,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.03
-  m_fontSizeBase: 0.05
+  m_fontSize: 0.01
+  m_fontSizeBase: 0.01
   m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 0.01
-  m_fontSizeMax: 0.03
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0.009
+  m_fontSizeMax: 0.01
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -3457,7 +3459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9496,7 +9498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &907354943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11151,7 +11153,7 @@ CharacterController:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.5
   m_Radius: 0.35
@@ -11167,7 +11169,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084727813}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a26c941eb8a46f7b6d00416227ab8c0, type: 3}
   m_Name: 
@@ -18001,7 +18003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2045810400
 RectTransform:
   m_ObjectHideFlags: 0

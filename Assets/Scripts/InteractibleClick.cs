@@ -25,6 +25,6 @@ public class InteractibleClick : MonoBehaviour
         sistema.SetActive(true);
 
         SoundManager.instance.PlaySound(clip);
-        menuButton.OnClick();
+        menuButton.CloseMenu();
     }
 }

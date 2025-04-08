@@ -25,6 +25,6 @@ public class SistemClick : MonoBehaviour
         sistema.SetActive(true);
 
         SoundManager.instance.PlaySound(clip);
-        menuButton.OnClick();
+        menuButton.CloseMenu();
     }
 }

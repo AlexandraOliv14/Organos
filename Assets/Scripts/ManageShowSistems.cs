@@ -36,7 +36,6 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             GameObject hoveredObject = hit.collider.gameObject;
-            Debug.Log(hoveredObject);
 
             if (objCurrent == hoveredObject) return;
 
@@ -49,10 +48,25 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
                 }
 
                 ActivateSelect actSel = hoveredObject.GetComponent<ActivateSelect>();
-                if (!actSel.IsUnityNull()) actSel.Select(_title); SoundManager.instance.PlaySound(soundSelect) ;
+                if (!actSel.IsUnityNull()) 
+                {
+                    actSel.Select(_title); 
+                    SoundManager.instance.PlaySound(soundSelect); 
+                }
 
                 objCurrent = hoveredObject;
             }
+        }
+
+        if (menu.activeSelf)
+        {
+            if (objCurrent != null)
+            {
+                ActivateSelect actSelCurrent = objCurrent.GetComponent<ActivateSelect>();
+                if (!actSelCurrent.IsUnityNull()) actSelCurrent.DesSelect();
+                _title.text = "";
+            }
+            objCurrent = null;
         }
     }
 

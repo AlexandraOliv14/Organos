@@ -56,6 +56,13 @@ public class InteractableDigestive : MonoBehaviour
         foreach (GameObject cartel in carteles) { cartel.SetActive(false); }
     }
 
+    public void initialState()
+    {
+        moving = false;
+        sequencia = true;
+        actiu = false;
+}
+
     private void Update()
     {
         if (actiu)
