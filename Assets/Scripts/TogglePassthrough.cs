@@ -29,7 +29,7 @@ public class TogglePassthrough : MonoBehaviour //PLAYER
                 Camera.main.clearFlags = CameraClearFlags.Skybox;           //Instala el Skybox para la realidad virtual
                 if (plane != null)
                 {
-                    plane[0].transform.localScale = new Vector3(5f, 0.5f, 5f);
+                    plane[0].transform.localScale = new Vector3(1f, 1f, 1f);
                 }
                 button.text = "passthrough";
             }
@@ -39,7 +39,7 @@ public class TogglePassthrough : MonoBehaviour //PLAYER
                 Camera.main.backgroundColor = new Color32(0, 0, 0, 0);      //El color debe establecerce como  0,0,0,0
                 if (plane != null)
                 {
-                    plane[0].transform.localScale = new Vector3(3f, 0.1f, 4f);
+                    plane[0].transform.localScale = new Vector3(0.3f, 1f, 0.3f);
                 }
                 button.text = "VR";
             }

@@ -1,14 +1,19 @@
 fileFormatVersion: 2
-guid: e599b1c6ff9208d44bfeebfb6d181e0f
+guid: adc6391c8ea0f4649b7f528f5e9519ac
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sclera
+    second: {fileID: 2100000, guid: 8f29dd2e376f12847a4e5f5069230046, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 1
+    materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
