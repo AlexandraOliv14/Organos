@@ -698,6 +698,7 @@ MonoBehaviour:
   sistema: {fileID: 226196800}
   clip: {fileID: 8300000, guid: 567da2f7ddc14ea439a3a55f66369e8e, type: 3}
   menuButton: {fileID: 21193011}
+  rayInteractor: {fileID: 1999669394}
 --- !u!114 &67516709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4259,6 +4260,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 21193006}
+  - {fileID: 980789573}
   m_Father: {fileID: 1287224567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &361696940 stripped
@@ -9934,6 +9936,7 @@ MonoBehaviour:
   sistema: {fileID: 2075144890}
   clip: {fileID: 8300000, guid: 567da2f7ddc14ea439a3a55f66369e8e, type: 3}
   menuButton: {fileID: 21193011}
+  rayInteractor: {fileID: 1999669394}
 --- !u!1 &965779001
 GameObject:
   m_ObjectHideFlags: 0
@@ -10037,7 +10040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980789572}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.17731157, y: 0.85108757, z: 2.026163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10046,7 +10049,7 @@ Transform:
   - {fileID: 536666172}
   - {fileID: 2075144889}
   - {fileID: 226196799}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 353420387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &980789574
 MonoBehaviour:
@@ -14688,6 +14691,7 @@ MonoBehaviour:
   sistema: {fileID: 601078517}
   clip: {fileID: 8300000, guid: 567da2f7ddc14ea439a3a55f66369e8e, type: 3}
   menuButton: {fileID: 21193011}
+  rayInteractor: {fileID: 1999669394}
 --- !u!1 &1607755995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1645500252651178, guid: d83f522a48501924da73d3fbdd8a6de1, type: 3}
@@ -15839,6 +15843,7 @@ MonoBehaviour:
   sistema: {fileID: 1516981743}
   clip: {fileID: 8300000, guid: 567da2f7ddc14ea439a3a55f66369e8e, type: 3}
   menuButton: {fileID: 21193011}
+  rayInteractor: {fileID: 1999669394}
 --- !u!1 &1862714195
 GameObject:
   m_ObjectHideFlags: 0
@@ -17055,7 +17060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LineWidth: 0.005
+  m_LineWidth: 0.004
   m_OverrideInteractorLineLength: 1
   m_LineLength: 10
   m_AutoAdjustLineLength: 0
@@ -17243,7 +17248,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.003
+    widthMultiplier: 0.004
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -19393,7 +19398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LineWidth: 0.005
+  m_LineWidth: 0.004
   m_OverrideInteractorLineLength: 1
   m_LineLength: 10
   m_AutoAdjustLineLength: 0
@@ -19581,7 +19586,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.003
+    widthMultiplier: 0.004
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -20264,6 +20269,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1084727816}
   - {fileID: 1287224567}
-  - {fileID: 980789573}
   - {fileID: 1904159095}
   - {fileID: 303700146}

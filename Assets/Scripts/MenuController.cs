@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour //MENUS
     
     [SerializeField] private InputActionReference openMenuAction;
     [SerializeField] private List<GameObject> ItemSistems;
+
     [SerializeField] private GameObject nombreSistems;
     [SerializeField] private GameObject cartelMenu;
     [SerializeField] private GameObject cartelPress;
