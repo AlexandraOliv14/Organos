@@ -1,17 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals;
 
 public class InteractableCirculatory : MonoBehaviour
 {
 
     [SerializeField] private InputActionProperty action;
+    [SerializeField] private XRRayInteractor rayInteractor;
 
     public int state = 4;
     private GameObject[] childrenART;
     private GameObject[] childrenVEN;
 
-    UtilsInteractables utils;
 
     private void Awake()
     {
@@ -19,41 +20,44 @@ public class InteractableCirculatory : MonoBehaviour
         childrenART = GameObject.FindGameObjectsWithTag("arterias");
         childrenVEN = GameObject.FindGameObjectsWithTag("venas");
 
-        utils = new UtilsInteractables();
-    }
-
-    private void Start()
-    {
         state = 4;
     }
 
-    public void initialState()
+    private void OnEnable()
+    {
+        rayInteractor.GetComponent<XRInteractorLineVisual>().lineWidth = 0.002f;
+        action.action.performed += OnAction;
+    }
+    private void OnDisable()
     {
         state = 4;
+        rayInteractor.GetComponent<XRInteractorLineVisual>().lineWidth = 0.004f;
+        action.action.performed -= OnAction;
     }
 
     private void Update()
     {
+        if (!gameObject.activeSelf) return;
         if (gameObject.activeSelf)
         {
             if(state == 1)
             {
-                utils.activeList(childrenART, false);
+                UtilsInteractables.ActiveList(childrenART, false);
             }
             if (state == 2)
             {
-                utils.activeList(childrenART, true);
-                utils.activeList(childrenVEN, false);
+                UtilsInteractables.ActiveList(childrenART, true);
+                UtilsInteractables.ActiveList(childrenVEN, false);
             }
             if(state == 3)
             {
-                utils.activeList(childrenART, false);
-                utils.activeList(childrenVEN, false);
+                UtilsInteractables.ActiveList(childrenART, false);
+                UtilsInteractables.ActiveList(childrenVEN, false);
             }
             if (state == 4)
             {
-                utils.activeList(childrenART, true);
-                utils.activeList(childrenVEN, true);
+                UtilsInteractables.ActiveList(childrenART, true);
+                UtilsInteractables.ActiveList(childrenVEN, true);
             }
         }
     }
@@ -82,6 +86,5 @@ public class InteractableCirculatory : MonoBehaviour
         }
     }
 
-    private void OnEnable() => action.action.performed += OnAction;
 }
 

@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,11 +19,10 @@ public class InteractableEncefalo : MonoBehaviour
     private GameObject childEmilR;
     private GameObject chilVent;
 
+    [Header("Letreros")]
     [SerializeField] private GameObject LetreroVent;
     [SerializeField] private GameObject LetreroLimb;
     [SerializeField] private GameObject LetreroNerv;
-
-    UtilsInteractables utils;
 
     private void Awake()
     {
@@ -41,19 +39,17 @@ public class InteractableEncefalo : MonoBehaviour
         childEmilR = gameObject.transform.Find("r_Right Cerebral Hemisphere").gameObject;
         chilVent = gameObject.transform.Find("r_ventricle").gameObject;
 
-        utils = new UtilsInteractables();
-
         state = 6;
     }
-
-    public void initialState()
+    private void OnDisable()
     {
         state = 6;
+        action.action.performed -= OnAction;
     }
-
+    
     private void Update()
     {
-
+        if (!gameObject.activeSelf) return;
         if (gameObject.activeSelf)
         {
 
@@ -72,10 +68,10 @@ public class InteractableEncefalo : MonoBehaviour
                 //cartel sistema ventricular
                 LetreroVent.SetActive(true);
 
-                utils.activeList(childrenSterm, false);
-                utils.activeList(childrenLimb, false);
-                utils.activeList(childrenUll, false);
-                utils.activeList(childrenBasal, false);
+                UtilsInteractables.ActiveList(childrenSterm, false);
+                UtilsInteractables.ActiveList(childrenLimb, false);
+                UtilsInteractables.ActiveList(childrenUll, false);
+                UtilsInteractables.ActiveList(childrenBasal, false);
 
                 childThalamus.SetActive(false);
                 chilVent.SetActive(true);
@@ -84,12 +80,12 @@ public class InteractableEncefalo : MonoBehaviour
             {
                 //sistema limbico+
                 LetreroLimb.SetActive(true);
-                
-                utils.activeList(childrenLimb, true);
-                utils.activeList(childrenBasal, true);
+
+                UtilsInteractables.ActiveList(childrenLimb, true);
+                UtilsInteractables.ActiveList(childrenBasal, true);
                 childThalamus.SetActive(true);
 
-                utils.activeList(childrenSterm, false);
+                UtilsInteractables.ActiveList(childrenSterm, false);
                 chilVent.SetActive(false);
                 LetreroVent.SetActive(false);
             }
@@ -97,12 +93,12 @@ public class InteractableEncefalo : MonoBehaviour
             {
                 //sistema nervioso
                 LetreroNerv.SetActive(true);
-                
-                utils.activeList(childrenSterm, true);
-                utils.activeList(childrenUll, true);
 
-                utils.activeList(childrenLimb, false);
-                utils.activeList(childrenBasal, false);
+                UtilsInteractables.ActiveList(childrenSterm, true);
+                UtilsInteractables.ActiveList(childrenUll, true);
+
+                UtilsInteractables.ActiveList(childrenLimb, false);
+                UtilsInteractables.ActiveList(childrenBasal, false);
 
                 chilVent.SetActive(false);
                 childThalamus.SetActive(false);
@@ -111,10 +107,10 @@ public class InteractableEncefalo : MonoBehaviour
             if (state == 6)
             {
                 //todo
-                utils.activeList(childrenSterm, true);
-                utils.activeList(childrenLimb, true);
-                utils.activeList(childrenUll, true);
-                utils.activeList(childrenBasal, true);
+                UtilsInteractables.ActiveList(childrenSterm, true);
+                UtilsInteractables.ActiveList(childrenLimb, true);
+                UtilsInteractables.ActiveList(childrenUll, true);
+                UtilsInteractables.ActiveList(childrenBasal, true);
 
                 childCerebel.SetActive(true);
                 childThalamus.SetActive(true);
@@ -129,7 +125,6 @@ public class InteractableEncefalo : MonoBehaviour
             }
         }
     }
-
 
     private void OnAction(InputAction.CallbackContext obj)
     {

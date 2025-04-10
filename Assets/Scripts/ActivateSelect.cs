@@ -21,11 +21,7 @@ public class ActivateSelect : MonoBehaviour
             }
             else                            //Cambiar 2 color
             {
-                Material[] materials = new Material[2];
-                materials[0] = newColor;
-                materials[1] = newColor;
-
-                render.materials = materials;  //Color de seleccion
+                render.materials = Change2Color(newColor);  //Color de seleccion
             }
         }
 
@@ -42,13 +38,18 @@ public class ActivateSelect : MonoBehaviour
             }
             else                            //Cambiar 2 color
             {
-                Material[] materials = new Material[2];
-                materials[0] = oldColor1;
-                materials[1] = oldColor2;
-
-                render.materials = materials;  //Color de correspondiente
+                render.materials = Change2Color(oldColor2);  //Color de correspondiente
             }
         }
+    }
+
+    private Material[] Change2Color(Material color)
+    {
+        Material[] materials = new Material[2];
+        materials[0] = color;
+        materials[1] = color;
+
+        return materials;
     }
 
 }

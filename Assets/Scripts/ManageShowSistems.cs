@@ -8,17 +8,14 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
 {
     [SerializeField] private InputActionProperty toggleAction;                   //Boton o obotones asignados
 
+    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject nombreSistems;
+    [SerializeField] private AudioClip soundSelect;
+
     private XRRayInteractor rayInteractor;
 
-    [SerializeField] private GameObject menu;
-
-    [SerializeField] private GameObject nombreSistems;
-
     private GameObject objCurrent;
-
     private TMP_Text _title;
-
-    [SerializeField] private AudioClip soundSelect;
 
     private void Awake()
     {
@@ -29,8 +26,7 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
 
     void Update()
     {
-        if (rayInteractor == null)
-            return;
+        if (rayInteractor == null || !rayInteractor.isActiveAndEnabled) return;
 
         // Verifica si el rayo está sobre un interactable
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
@@ -39,41 +35,45 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
 
             if (objCurrent == hoveredObject) return;
 
-            if(objCurrent != hoveredObject)
+            if (objCurrent != hoveredObject)
             {
-                if(objCurrent != null)
-                {
-                    ActivateSelect actSelCurrent = objCurrent.GetComponent<ActivateSelect>();
-                    if (!actSelCurrent.IsUnityNull()) actSelCurrent.DesSelect();
-                }
-
-                ActivateSelect actSel = hoveredObject.GetComponent<ActivateSelect>();
-                if (!actSel.IsUnityNull()) 
-                {
-                    actSel.Select(_title); 
-                    SoundManager.instance.PlaySound(soundSelect); 
-                }
-
-                objCurrent = hoveredObject;
+                DeselectCurrent();
+                OnSelect(hoveredObject);
             }
         }
 
-        if (menu.activeSelf)
+        if (menu.activeSelf) ClearSelection();
+    }
+
+    private void OnSelect(GameObject hoveredObject)
+    {
+        if (hoveredObject.TryGetComponent<ActivateSelect>(out var actSel)) //Si no lo encuentra devuelve false y si lo encuentra lo guarda en la variable dada
         {
-            if (objCurrent != null)
-            {
-                ActivateSelect actSelCurrent = objCurrent.GetComponent<ActivateSelect>();
-                if (!actSelCurrent.IsUnityNull()) actSelCurrent.DesSelect();
-                _title.text = "";
-            }
-            objCurrent = null;
+            actSel.Select(_title);
+            SoundManager.instance.PlaySound(soundSelect);
+        }
+
+        objCurrent = hoveredObject;
+    }
+
+    private void DeselectCurrent()
+    {
+        if (objCurrent != null)
+        {
+            if (objCurrent.TryGetComponent<ActivateSelect>(out var actSel)) actSel.DesSelect(); //Si no lo encuentra devuelve false y si lo encuentra lo guarda en la variable dada
         }
     }
 
-    
+    private void ClearSelection()
+    {
+        DeselectCurrent();
+        _title.text = "";
+        nombreSistems.SetActive(false);
+        objCurrent = null;
+    }
+
     private void OnPress(InputAction.CallbackContext obj)
     {
-
         if (!menu.activeSelf)                                   //Verifica que el menu este desactivado
         {
             if (toggleAction.action.IsPressed())                //Cuando se presiona el boton, se activa el rayo y el nombre del sistema
@@ -81,13 +81,19 @@ public class ManageShowSistems : MonoBehaviour //RAYINTERACTOR
                 rayInteractor.enabled = true;
                 nombreSistems.SetActive(true);
             }
-            else                                                //Si el boton de suelta, se desactiva el rayo, el nombre del sistema y se borra el
-            {                                                   //contenido del nombre 
-                rayInteractor.enabled = false;
-            }
         }
     }
-    private void OnEnable() => toggleAction.action.performed += OnPress;
-    private void OnDisable() => toggleAction.action.performed -= OnPress;
+
+    private void OnRelise(InputAction.CallbackContext obj)
+    {
+        if (!menu.activeSelf)                                   //Verifica que el menu este desactivado
+        {
+            ClearSelection();
+            rayInteractor.enabled = false;
+        }
+    }
+
+    private void OnEnable(){toggleAction.action.performed += OnPress; toggleAction.action.canceled += OnRelise;}
+    private void OnDisable() { toggleAction.action.performed -= OnPress; toggleAction.action.canceled -= OnRelise; }
 
 }

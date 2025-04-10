@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -8,11 +7,11 @@ public class MenuController : MonoBehaviour //MENUS
 {
     
     [SerializeField] private InputActionReference openMenuAction;
-    [SerializeField] private List<GameObject> ItemSistems;
+    [SerializeField] private GameObject[] ItemSistems;
 
-    [SerializeField] private GameObject nombreSistems;
-    [SerializeField] private GameObject cartelMenu;
-    [SerializeField] private GameObject cartelPress;
+    [SerializeField] private GameObject[] objectsInMenu;
+
+    [SerializeField] private GameObject[] objectsNotInMenu;
 
     [Header ("RayCast")]
     [SerializeField] private XRRayInteractor reyCastrigth;
@@ -24,7 +23,6 @@ public class MenuController : MonoBehaviour //MENUS
         openMenuAction.action.Enable();
         openMenuAction.action.performed += ToogleMenu;
         InputSystem.onDeviceChange -= onDeviceGhange;
-
     }
 
     public void CloseMenu()
@@ -33,9 +31,8 @@ public class MenuController : MonoBehaviour //MENUS
         reyCastrigth.enabled = false;                         //El reyCast se activa o desactiva segun corresponda
         reyCastleft.enabled = false;
 
-        nombreSistems.SetActive(true);
-        cartelMenu.SetActive(true);
-        cartelPress.SetActive(true);
+        UtilsInteractables.ActiveList(objectsInMenu, false);
+        UtilsInteractables.ActiveList(objectsNotInMenu, true);
     }
 
     public void OpenMenu()
@@ -44,23 +41,9 @@ public class MenuController : MonoBehaviour //MENUS
         reyCastrigth.enabled = true;                         //El reyCast se activa o desactiva segun corresponda
         reyCastleft.enabled = true;
 
-        nombreSistems.SetActive(false);
-        cartelMenu.SetActive(false);
-        cartelPress.SetActive(false);
-
-        foreach (GameObject item in ItemSistems)
-        {
-            item.SetActive(false);
-            InteractableCirculatory circ = item.GetComponent<InteractableCirculatory>();
-            if (circ != null) circ.initialState();
-            InteractableDigestive dig = item.GetComponent<InteractableDigestive>();
-            if (dig != null) dig.initialState();
-            InteractableEncefalo cerb = item.GetComponent<InteractableEncefalo>();
-            if (cerb != null) cerb.initialState();
-            InteractableEye ojo = item.GetComponent<InteractableEye>();
-            if (ojo != null) ojo.close = true;
-
-        }
+        UtilsInteractables.ActiveList(objectsInMenu, true);
+        UtilsInteractables.ActiveList(objectsNotInMenu, false);
+        UtilsInteractables.ActiveList(ItemSistems, false);
     }
 
     private void ToogleMenu(InputAction.CallbackContext context)

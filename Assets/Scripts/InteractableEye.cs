@@ -6,14 +6,22 @@ public class InteractableEye : MonoBehaviour
     [SerializeField] private InputActionProperty action;
 
     public bool close = true;
-
     private MoveEye[] moves;
 
     private void Awake()
     {
         action.action.Enable();
         moves = gameObject.GetComponentsInChildren<MoveEye>();
+    }
 
+    private void OnDisable()
+    {
+        close = true; 
+        foreach (MoveEye part in moves)
+        {
+            part.InicialState();
+        }
+        action.action.performed -= OnAction;
     }
 
     private void OnAction(InputAction.CallbackContext obj)
@@ -28,5 +36,4 @@ public class InteractableEye : MonoBehaviour
 
 
     private void OnEnable() => action.action.performed += OnAction;
-    private void OnDisable() => action.action.performed -= OnAction;
 }

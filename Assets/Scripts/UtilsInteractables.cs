@@ -1,9 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class UtilsInteractables
+public static class UtilsInteractables
 {
-    public void activeList(GameObject[] partSistem, bool active)
+    public static void ActiveList(GameObject[] partSistem, bool active)
     {
 
         if(!partSistem.IsUnityNull() && partSistem.Length > 0)

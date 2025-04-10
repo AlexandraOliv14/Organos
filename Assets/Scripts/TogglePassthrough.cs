@@ -7,11 +7,11 @@ public class TogglePassthrough : MonoBehaviour //PLAYER
 {
     [SerializeField] private InputActionProperty toggleAction;
 
-    private GameObject[] plane; 
+    [SerializeField] private TMP_Text button;
+
+    private GameObject[] plane;
 
     private ARCameraManager arCameraManager;
-
-    [SerializeField] private TMP_Text button;
 
     private void Awake()
     {

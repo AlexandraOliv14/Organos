@@ -9,6 +9,7 @@ public class InteractableDigestive : MonoBehaviour
 
     [SerializeField] private GameObject[] carteles;
 
+    [Header("flechas a mover")]
     public GameObject i_arrow1;
     public GameObject i_arrow2;
     public GameObject i_arrow3;
@@ -53,28 +54,39 @@ public class InteractableDigestive : MonoBehaviour
     private void Awake()
     {
         action.action.Enable();
-        foreach (GameObject cartel in carteles) { cartel.SetActive(false); }
     }
 
-    public void initialState()
+    private void OnDisable()
     {
         moving = false;
         sequencia = true;
         actiu = false;
-}
+
+        UtilsInteractables.ActiveList(carteles, false);
+    }
+
+    private void OnEnable()
+    {
+        moving = false;
+        sequencia = true;
+        actiu = false;
+        UtilsInteractables.ActiveList(carteles, false);
+        action.action.performed += OnAction;
+    }
 
     private void Update()
     {
+        if (!gameObject.activeSelf) return;
         if (actiu)
         {
             moving = true; //activo moviment
-            foreach (GameObject cartel in carteles) { cartel.SetActive(true); }
+            UtilsInteractables.ActiveList(carteles, true);
         }
         else
         {
             moving = false; //deixa de fer sequencia de fletxes
             Parar(); //desactiva les fletxes
-            foreach (GameObject cartel in carteles) { cartel.SetActive(false); }
+            UtilsInteractables.ActiveList(carteles, false);
         }
 
 
@@ -93,8 +105,6 @@ public class InteractableDigestive : MonoBehaviour
     {
         actiu = !actiu;
     }
-
-    private void OnEnable() => action.action.performed += OnAction;
 
     void Parar()
     {

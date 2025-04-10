@@ -393,9 +393,13 @@ MonoBehaviour:
   - {fileID: 1516981743}
   - {fileID: 2075144890}
   - {fileID: 226196800}
-  nombreSistems: {fileID: 396133192}
-  cartelMenu: {fileID: 907354942}
-  cartelPress: {fileID: 2045810399}
+  objectsInMenu:
+  - {fileID: 642695871}
+  - {fileID: 1067984532}
+  objectsNotInMenu:
+  - {fileID: 907354942}
+  - {fileID: 2045810399}
+  - {fileID: 396133192}
   reyCastrigth: {fileID: 1999669394}
   reyCastleft: {fileID: 2118572084}
 --- !u!1 &27686792 stripped
@@ -459,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicio: {fileID: 1719232223}
-  final: {fileID: 871543855}
+  final: {fileID: 1862714195}
   velocidad: 2
 --- !u!1 &39034707 stripped
 GameObject:
@@ -698,7 +702,6 @@ MonoBehaviour:
   sistema: {fileID: 226196800}
   clip: {fileID: 8300000, guid: 567da2f7ddc14ea439a3a55f66369e8e, type: 3}
   menuButton: {fileID: 21193011}
-  rayInteractor: {fileID: 1999669394}
 --- !u!114 &67516709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2465,11 +2468,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4937579242189022, guid: f6724cd2710d79e42bc085edf5e4ba2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.217
       objectReference: {fileID: 0}
     - target: {fileID: 4937579242189022, guid: f6724cd2710d79e42bc085edf5e4ba2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0002
+      value: 0.335
       objectReference: {fileID: 0}
     - target: {fileID: 4937579242189022, guid: f6724cd2710d79e42bc085edf5e4ba2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3460,7 +3463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5114,7 +5117,7 @@ GameObject:
   - component: {fileID: 508757270}
   - component: {fileID: 508757269}
   m_Layer: 0
-  m_Name: FinBloodV
+  m_Name: FinRetina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5367,7 +5370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189701551511212, guid: 5fca90aa9a6cee84a8e8defebdf1319f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0062564
+      value: 0.129
       objectReference: {fileID: 0}
     - target: {fileID: 4189701551511212, guid: 5fca90aa9a6cee84a8e8defebdf1319f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5375,7 +5378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189701551511212, guid: 5fca90aa9a6cee84a8e8defebdf1319f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.44828
+      value: -0.399
       objectReference: {fileID: 0}
     - target: {fileID: 4189701551511212, guid: 5fca90aa9a6cee84a8e8defebdf1319f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6612,7 +6615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicio: {fileID: 311618406}
-  final: {fileID: 1862714195}
+  final: {fileID: 1119552334}
   velocidad: 2
 --- !u!1 &590817378 stripped
 GameObject:
@@ -6708,7 +6711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4770289805412638, guid: c07810491aff462468e68cadca0ac910, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.43706158
+      value: 0.266
       objectReference: {fileID: 0}
     - target: {fileID: 4770289805412638, guid: c07810491aff462468e68cadca0ac910, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6751,6 +6754,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: db2239998f521df4ba658b678fe10e8e, type: 2}
     - target: {fileID: 23116433115997554, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c87bdf8185f282c428d2df1e24eaa5af, type: 2}
+    - target: {fileID: 23126778383366058, guid: c07810491aff462468e68cadca0ac910, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c87bdf8185f282c428d2df1e24eaa5af, type: 2}
@@ -6806,6 +6813,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e3bf73fbf37521c468c9fc53d16a9519, type: 2}
+    - target: {fileID: 23769782275064446, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c87bdf8185f282c428d2df1e24eaa5af, type: 2}
     - target: {fileID: 23848486479676018, guid: c07810491aff462468e68cadca0ac910, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -6842,6 +6853,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: db2239998f521df4ba658b678fe10e8e, type: 2}
+    - target: {fileID: 33222158483225426, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7564409265903420470, guid: 7db2a94b29e28fb40ac62a8d8fb977b8, type: 3}
+    - target: {fileID: 33475467789930796, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7564409265903420470, guid: 7db2a94b29e28fb40ac62a8d8fb977b8, type: 3}
+    - target: {fileID: 230481820062998031, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: sistema
+      value: 
+      objectReference: {fileID: 601078517}
+    - target: {fileID: 230481820062998031, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: newColor
+      value: 
+      objectReference: {fileID: 2100000, guid: 54d9db21a145c2040bdabf32ae90546c, type: 2}
+    - target: {fileID: 230481820062998031, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: oldColor1
+      value: 
+      objectReference: {fileID: 2100000, guid: c87bdf8185f282c428d2df1e24eaa5af, type: 2}
     - target: {fileID: 242381668150495921, guid: c07810491aff462468e68cadca0ac910, type: 3}
       propertyPath: nombre
       value: 
@@ -7182,6 +7213,18 @@ PrefabInstance:
       propertyPath: m_InteractionLayers.m_Bits
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7211542516483042311, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: sistema
+      value: 
+      objectReference: {fileID: 601078517}
+    - target: {fileID: 7211542516483042311, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: newColor
+      value: 
+      objectReference: {fileID: 2100000, guid: 54d9db21a145c2040bdabf32ae90546c, type: 2}
+    - target: {fileID: 7211542516483042311, guid: c07810491aff462468e68cadca0ac910, type: 3}
+      propertyPath: oldColor1
+      value: 
+      objectReference: {fileID: 2100000, guid: c87bdf8185f282c428d2df1e24eaa5af, type: 2}
     - target: {fileID: 7392969867911104717, guid: c07810491aff462468e68cadca0ac910, type: 3}
       propertyPath: nombre
       value: 
@@ -7378,11 +7421,7 @@ PrefabInstance:
       propertyPath: m_InteractionLayers.m_Bits
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7211542516483042311, guid: c07810491aff462468e68cadca0ac910, type: 3}
-    - {fileID: 3951706906833105847, guid: c07810491aff462468e68cadca0ac910, type: 3}
-    - {fileID: 230481820062998031, guid: c07810491aff462468e68cadca0ac910, type: 3}
-    - {fileID: 1925275466019519539, guid: c07810491aff462468e68cadca0ac910, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1166710359325804, guid: c07810491aff462468e68cadca0ac910, type: 3}
     m_AddedGameObjects:
@@ -8363,7 +8402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicio: {fileID: 311618406}
-  final: {fileID: 1119552334}
+  final: {fileID: 871543855}
   velocidad: 2
 --- !u!1 &773922582 stripped
 GameObject:
@@ -9303,7 +9342,7 @@ GameObject:
   - component: {fileID: 871543858}
   - component: {fileID: 871543857}
   m_Layer: 0
-  m_Name: FinBloodV
+  m_Name: FinRetina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9936,7 +9975,6 @@ MonoBehaviour:
   sistema: {fileID: 2075144890}
   clip: {fileID: 8300000, guid: 567da2f7ddc14ea439a3a55f66369e8e, type: 3}
   menuButton: {fileID: 21193011}
-  rayInteractor: {fileID: 1999669394}
 --- !u!1 &965779001
 GameObject:
   m_ObjectHideFlags: 0
@@ -10380,7 +10418,7 @@ GameObject:
   - component: {fileID: 1019117965}
   - component: {fileID: 1019117964}
   m_Layer: 0
-  m_Name: FinArteri
+  m_Name: FinBloodV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10908,7 +10946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1075609895
 Transform:
   m_ObjectHideFlags: 0
@@ -11156,7 +11194,7 @@ CharacterController:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 1.5
   m_Radius: 0.35
@@ -11172,7 +11210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084727813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a26c941eb8a46f7b6d00416227ab8c0, type: 3}
   m_Name: 
@@ -11325,7 +11363,7 @@ GameObject:
   - component: {fileID: 1119552337}
   - component: {fileID: 1119552336}
   m_Layer: 0
-  m_Name: FinRetina
+  m_Name: FinArtery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12700,7 +12738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicio: {fileID: 1719232223}
-  final: {fileID: 508757267}
+  final: {fileID: 1019117962}
   velocidad: 2
 --- !u!1 &1325425976 stripped
 GameObject:
@@ -13639,7 +13677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicio: {fileID: 1719232223}
-  final: {fileID: 871543855}
+  final: {fileID: 1862714195}
   velocidad: 2
 --- !u!1 &1443076144 stripped
 GameObject:
@@ -13849,7 +13887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicio: {fileID: 311618406}
-  final: {fileID: 2004900737}
+  final: {fileID: 508757267}
   velocidad: 2
 --- !u!1 &1477805893
 GameObject:
@@ -14423,7 +14461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicio: {fileID: 1719232223}
-  final: {fileID: 508757267}
+  final: {fileID: 1019117962}
   velocidad: 2
 --- !u!1 &1574946544 stripped
 GameObject:
@@ -14691,7 +14729,6 @@ MonoBehaviour:
   sistema: {fileID: 601078517}
   clip: {fileID: 8300000, guid: 567da2f7ddc14ea439a3a55f66369e8e, type: 3}
   menuButton: {fileID: 21193011}
-  rayInteractor: {fileID: 1999669394}
 --- !u!1 &1607755995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1645500252651178, guid: d83f522a48501924da73d3fbdd8a6de1, type: 3}
@@ -15704,7 +15741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicio: {fileID: 311618406}
-  final: {fileID: 1019117962}
+  final: {fileID: 2004900737}
   velocidad: 2
 --- !u!1 &1836968517
 GameObject:
@@ -15843,7 +15880,6 @@ MonoBehaviour:
   sistema: {fileID: 1516981743}
   clip: {fileID: 8300000, guid: 567da2f7ddc14ea439a3a55f66369e8e, type: 3}
   menuButton: {fileID: 21193011}
-  rayInteractor: {fileID: 1999669394}
 --- !u!1 &1862714195
 GameObject:
   m_ObjectHideFlags: 0
@@ -15857,7 +15893,7 @@ GameObject:
   - component: {fileID: 1862714198}
   - component: {fileID: 1862714197}
   m_Layer: 0
-  m_Name: FinArteri
+  m_Name: FinBloodV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17704,7 +17740,7 @@ GameObject:
   - component: {fileID: 2004900740}
   - component: {fileID: 2004900739}
   m_Layer: 0
-  m_Name: FinRetina
+  m_Name: FinArtery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19114,6 +19150,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -4371056886082514577, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rayInteractor: {fileID: 1999669394}
   state: 0
 --- !u!1 &2076015929 stripped
 GameObject:
