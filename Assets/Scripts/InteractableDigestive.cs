@@ -92,6 +92,7 @@ public class InteractableDigestive : MonoBehaviour
 
         if (moving)
         {
+            g_arrow6.SetActive(true);
             if (sequencia)
             { //Boolea per activar coroutines sols un cop
 
@@ -139,10 +140,10 @@ public class InteractableDigestive : MonoBehaviour
         g_arrow4.SetActive(false);
         g_arrow5.SetActive(false);
         g_arrow6.SetActive(false);
-        g_arrow7.SetActive(false);
-        g_arrow8.SetActive(false);
-        g_arrow9.SetActive(false);
-        g_arrow10.SetActive(false);
+        // g_arrow7.SetActive(false);
+        // g_arrow8.SetActive(false);
+        // g_arrow9.SetActive(false);
+        // g_arrow10.SetActive(false);
 
     }
 
@@ -180,38 +181,38 @@ public class InteractableDigestive : MonoBehaviour
             g_arrow3.SetActive(false);
             g_arrow4.SetActive(false);
             g_arrow5.SetActive(false);
-            g_arrow6.SetActive(true);
+            // g_arrow6.SetActive(true);
             yield return new WaitForSeconds(0.2f);
             i_arrow3.SetActive(false);
             i_arrow16.SetActive(false);
             i_arrow5.SetActive(true);
-            g_arrow7.SetActive(true);
-            g_arrow6.SetActive(false);
+            // g_arrow7.SetActive(true);
+            // g_arrow6.SetActive(false);
 
             yield return new WaitForSeconds(0.2f);
             i_arrow4.SetActive(false);
-            i_arrow6.SetActive(true);
-            g_arrow8.SetActive(true);
-            g_arrow7.SetActive(false);
+            // i_arrow6.SetActive(true);
+            // g_arrow8.SetActive(true);
+            // g_arrow7.SetActive(false);
             yield return new WaitForSeconds(0.2f);
             i_arrow5.SetActive(false);
             i_arrow7.SetActive(true);
             e_arrow1.SetActive(true);
-            g_arrow9.SetActive(true);
-            g_arrow8.SetActive(false);
+            // g_arrow9.SetActive(true);
+            // g_arrow8.SetActive(false);
             yield return new WaitForSeconds(0.2f);
-            i_arrow6.SetActive(false);
+            // i_arrow6.SetActive(false);
             i_arrow8.SetActive(true);
             e_arrow2.SetActive(true);
-            g_arrow10.SetActive(true);
-            g_arrow9.SetActive(false);
+            // g_arrow10.SetActive(true);
+            // g_arrow9.SetActive(false);
             yield return new WaitForSeconds(0.2f);
             i_arrow7.SetActive(false);
             e_arrow1.SetActive(false);
             i_arrow9.SetActive(true);
             e_arrow3.SetActive(true);
 
-            g_arrow10.SetActive(false);
+            // g_arrow10.SetActive(false);
             g_arrow1.SetActive(true);
             g_arrow2.SetActive(true);
             g_arrow3.SetActive(true);
@@ -239,28 +240,28 @@ public class InteractableDigestive : MonoBehaviour
             g_arrow3.SetActive(false);
             g_arrow4.SetActive(false);
             g_arrow5.SetActive(false);
-            g_arrow6.SetActive(true);
+            // g_arrow6.SetActive(true);
             yield return new WaitForSeconds(0.2f);
             i_arrow11.SetActive(false);
             e_arrow5.SetActive(false);
             i_arrow13.SetActive(true);
-            g_arrow7.SetActive(true);
-            g_arrow6.SetActive(false);
+            // g_arrow7.SetActive(true);
+            // g_arrow6.SetActive(false);
             yield return new WaitForSeconds(0.2f);
             i_arrow12.SetActive(false);
             e_arrow6.SetActive(false);
             i_arrow14.SetActive(true);
-            g_arrow8.SetActive(true);
-            g_arrow7.SetActive(false);
+            // g_arrow8.SetActive(true);
+            // g_arrow7.SetActive(false);
             yield return new WaitForSeconds(0.2f);
 
             i_arrow13.SetActive(false);
-            g_arrow9.SetActive(true);
-            g_arrow8.SetActive(false);
+            // g_arrow9.SetActive(true);
+            // g_arrow8.SetActive(false);
             yield return new WaitForSeconds(0.2f);
             i_arrow14.SetActive(false);
-            g_arrow10.SetActive(true);
-            g_arrow9.SetActive(false);
+            // g_arrow10.SetActive(true);
+            // g_arrow9.SetActive(false);
         }
 
         sequencia = true;
