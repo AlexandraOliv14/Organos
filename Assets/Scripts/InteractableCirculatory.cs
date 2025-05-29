@@ -7,12 +7,11 @@ public class InteractableCirculatory : MonoBehaviour
 {
 
     [SerializeField] private InputActionProperty action;
-    [SerializeField] private XRRayInteractor rayInteractor;
-
     public int state = 4;
     private GameObject[] childrenART;
     private GameObject[] childrenVEN;
 
+    [SerializeField] private XRRayInteractor rayInteractor;
 
     private void Awake()
     {

@@ -9,7 +9,7 @@ public class InteractableDigestive : MonoBehaviour
 
     [SerializeField] private GameObject[] carteles;
 
-    [Header("flechas a mover")]
+    [Header("Flechas a mover")]
     public GameObject i_arrow1;
     public GameObject i_arrow2;
     public GameObject i_arrow3;
@@ -95,7 +95,7 @@ public class InteractableDigestive : MonoBehaviour
             if (sequencia)
             { //Boolea per activar coroutines sols un cop
 
-                StartCoroutine("I_Sequencia"); //moviment i activació fletxes i cartells
+                StartCoroutine("I_Sequencia"); //moviment i activaciï¿½ fletxes i cartells
             }
 
         }
@@ -149,7 +149,7 @@ public class InteractableDigestive : MonoBehaviour
 
     IEnumerator I_Sequencia()
     {
-        //moviment i activació de fletxes i cartells
+        //moviment i activaciï¿½ de fletxes i cartells
         sequencia = false;
         if (moving)
         {
