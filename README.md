@@ -73,9 +73,8 @@ ____
 ## Licencia
 
 Proyecto académico sin fines comerciales.
-Para usos derivados o adaptaciones, contactar con la autora.
+
 ____
-## 👩‍💻 Autoría
 
 Alexandra Olivares
 
