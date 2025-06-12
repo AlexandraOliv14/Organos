@@ -399,7 +399,7 @@ MonoBehaviour:
   objectsNotInMenu:
   - {fileID: 907354942}
   - {fileID: 2045810399}
-  - {fileID: 396133192}
+  cartelNombre: {fileID: 396133192}
   reyCastrigth: {fileID: 1999669394}
   reyCastleft: {fileID: 2118572084}
 --- !u!1 &27686792 stripped

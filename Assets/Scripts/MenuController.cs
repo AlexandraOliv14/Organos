@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -12,6 +13,7 @@ public class MenuController : MonoBehaviour //MENUS
     [SerializeField] private GameObject[] objectsInMenu;
 
     [SerializeField] private GameObject[] objectsNotInMenu;
+    [SerializeField] private GameObject cartelNombre;
 
     [Header ("RayCast")]
     [SerializeField] private XRRayInteractor reyCastrigth;
@@ -44,6 +46,7 @@ public class MenuController : MonoBehaviour //MENUS
         UtilsInteractables.ActiveList(objectsInMenu, true);
         UtilsInteractables.ActiveList(objectsNotInMenu, false);
         UtilsInteractables.ActiveList(ItemSistems, false);
+        cartelNombre.SetActive(false);
     }
 
     private void ToogleMenu(InputAction.CallbackContext context)
